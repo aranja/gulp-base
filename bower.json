@@ -1,0 +1,22 @@
+{
+  "name": "gulp-base",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Ragnar Þór Valgeirsson (rthor)",
+    "email": "ragnar.valgeirsson@gmail.com",
+    "url": "http://rthor.is"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "normalize-scss": "~3.0.1",
+    "modernizr": "~2.7.2"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": [
+        "./modernizr.js"
+      ]
+    }
+  }
+}

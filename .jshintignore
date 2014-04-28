@@ -1,0 +1,5 @@
+bower_components
+dist
+dev
+src/js/vendor
+node_modules
