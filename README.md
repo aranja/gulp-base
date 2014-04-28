@@ -1,6 +1,24 @@
 # Gulp Base
 
-A base for projects using Gulp.
+A base for projects using Gulp. Pulls in a [public base](https://github.com/rthor/public-base) for `/src` which in turn bases it's SCSS on my [Pretty SCSS](https://github.com/rthor/pretty-scss) base. 
+
+## Usage
+
+| Dev. server     | Production build |
+| --------------- | ---------------- |
+| `$ gulp server` | `$ gulp --prod` | 
+
+## Thanks
+
+Inspired by multiple projects including, but not limited to:  
+
+- Form5 [Gulp-Blender](https://github.com/Form5/gulp-blender) 
+- greypants [Gulp-Starter](https://github.com/greypants/gulp-starter) 
+
+## TODO
+
+- Implement image task
+- Fix documentation
 
 ## The MIT License (MIT)
 
