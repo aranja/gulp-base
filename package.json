@@ -1,6 +1,6 @@
 {
   "name": "gulp-base",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A base for projects using Gulp",
   "browserify": {
     "transform": [
