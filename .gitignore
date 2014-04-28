@@ -5,5 +5,5 @@ node_modules/
 dist/
 dev/
 dev/
-src/
+src
 npm-debug.log
