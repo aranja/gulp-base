@@ -4,6 +4,31 @@ A base for projects using Gulp. Pulls in a [public base](https://github.com/rtho
 
 ## Usage
 
+Getting started is done in a few steps.
+
+1. Clone the Repo:
+
+```sh
+$ git clone https://github.com/rthor/gulp-base.git
+```
+
+2. Install dependencies:
+
+```sh
+$ [sudo] npm i
+```
+
+3. Run following commands (to be simplified):
+
+```sh
+$ gulp init
+$ gulp bower
+$ gulp build
+$ gulp server
+```
+
+---
+
 | Dev. server     | Production build |
 | --------------- | ---------------- |
 | `$ gulp server` | `$ gulp --prod` | 
