@@ -6,19 +6,19 @@ A base for projects using Gulp. Pulls in a [public base](https://github.com/rtho
 
 Getting started is done in a few steps.
 
-1. Clone the Repo:
+### 1. Clone the Repo:
 
 ```sh
 $ git clone https://github.com/rthor/gulp-base.git
 ```
 
-2. Install dependencies:
+### 2. Install dependencies:
 
 ```sh
 $ [sudo] npm i
 ```
 
-3. Run following commands (to be simplified):
+### 3. Run following commands (to be simplified):
 
 ```sh
 $ gulp submodules
