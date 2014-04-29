@@ -40,11 +40,6 @@ Inspired by multiple projects including, but not limited to:
 - Form5 [Gulp-Blender](https://github.com/Form5/gulp-blender) 
 - greypants [Gulp-Starter](https://github.com/greypants/gulp-starter) 
 
-## TODO
-
-- Implement image task
-- Fix documentation
-
 ## The MIT License (MIT)
 
 Copyright (c) 2014 Ragnar Þór Valgeirsson (rthor) http://rthor.is
