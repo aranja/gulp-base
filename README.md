@@ -21,7 +21,7 @@ $ [sudo] npm i
 3. Run following commands (to be simplified):
 
 ```sh
-$ gulp init
+$ gulp submodules
 $ gulp bower
 $ gulp build
 $ gulp server
