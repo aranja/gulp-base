@@ -32,7 +32,7 @@ function scss () {
 }
 
 module.exports = function (gulp) {
-  gulp.task('init', function src () {
+  gulp.task('submodules', function () {
     exec(gitUpdate, function (err, stdout) {
       console.log(err ? err : stdout ? stdout : '');
       if (!err) { scss(); }
