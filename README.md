@@ -29,9 +29,11 @@ $ gulp server
 
 ---
 
-| Dev. server     | Production build |
-| --------------- | ---------------- |
-| `$ gulp server` | `$ gulp --prod` | 
+Or in a simpler manner:
+
+```sh
+$ gulp init
+```
 
 ## Thanks
 
