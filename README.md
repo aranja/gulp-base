@@ -2,6 +2,15 @@
 
 A base for projects using Gulp. Pulls in a [public base](https://github.com/rthor/public-base) for `/src` which in turn bases it's SCSS on my [Pretty SCSS](https://github.com/rthor/pretty-scss) base. 
 
+## Tech
+
+- Gulp Build system
+- SCSS for CSS preprocessing.
+- Jade templating engine. 
+- Browserify for module loading JavaScript.
+- Image minification.
+- Gulp-server and livereload.
+
 ## Usage
 
 Getting started is done in a few steps.
@@ -18,22 +27,17 @@ $ git clone https://github.com/rthor/gulp-base.git
 $ [sudo] npm i
 ```
 
-### 3. Run following commands (to be simplified):
-
-```sh
-$ gulp submodules
-$ gulp bower
-$ gulp build
-$ gulp server
-```
-
----
-
-Or in a simpler manner:
+### 3. Build the project:
 
 ```sh
 $ gulp init
 ```
+
+---
+
+The server can always be booted up by the `gulp server` and for a production build, simply pass the flag `--prod`.
+
+*Note: When a server is not a necessity, just run `gulp --prod` to build a production ready version of the app.*
 
 ## Thanks
 

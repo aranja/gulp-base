@@ -1,6 +1,6 @@
 {
   "name": "gulp-base",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A base for projects using Gulp",
   "browserify": {
     "transform": [
@@ -48,7 +48,10 @@
     "gulp-ruby-sass": "~0.4.3",
     "gulp-rename": "~1.2.0",
     "gulp-util": "~2.2.14",
-    "vinyl-source-stream": "~0.1.1"
+    "vinyl-source-stream": "~0.1.1",
+    "gulp-changed": "~0.3.0",
+    "gulp-svgmin": "~0.4.5",
+    "gulp-imagemin": "~0.5.0"
   },
   "dependencies": {
     "jquery": "~2.1.0"
