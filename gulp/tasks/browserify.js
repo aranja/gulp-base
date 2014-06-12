@@ -21,6 +21,6 @@ module.exports = function (gulp, gutil) {
     .on('error', handleErrors)
     .pipe(source('app.js'))
     .pipe(gulp.dest('./' + (prod ? 'dist' : 'dev' ) + '/js/'))
-    .pipe( prod ? gutil.noop() : connect.reload() );
+    .pipe(prod ? gutil.noop() : connect.reload());
   });
 };

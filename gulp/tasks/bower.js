@@ -12,7 +12,7 @@ module.exports = function(gulp) {
         }))
       .on('end', function() {
         var jsFilter = filter(['**/*.js','**/*.map']),
-            scssFilter = filter('**/*.scss');
+            lessFilter = filter('**/*.less');
 
         return bowerFiles()
           .pipe( rename({dirname: ''}) )
@@ -22,8 +22,8 @@ module.exports = function(gulp) {
 
           .pipe( jsFilter.restore() )
 
-          .pipe( scssFilter )
-          .pipe( gulp.dest('./src/scss/vendor/') );
+          .pipe( lessFilter )
+          .pipe( gulp.dest('./src/styles/vendor/') );
       });
 
   });
