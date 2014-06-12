@@ -6,19 +6,19 @@ module.exports = function(gulp, gutil) {
     var prod = gutil.env.prod;
     var path = prod ? './dist' : './dev';
 
-    gulp.src('./src/*.html')
+    gulp.src('./app/*.html')
       .pipe( gulp.dest(path + '/') )
       .pipe( prod ? gutil.noop() : connect.reload() );
-    gulp.src('./src/img/**/*.ico')
+    gulp.src('./app/img/**/*.ico')
       .pipe( gulp.dest(path + '/img/') )
       .pipe( prod ? gutil.noop() : connect.reload() );
-    gulp.src('./src/js/vendor/*.js')
+    gulp.src('./app/js/vendor/*.js')
       .pipe( gulp.dest(path + '/js/vendor/') )
       .pipe( prod ? gutil.noop() : connect.reload() );
-    gulp.src('./src/fonts/**')
+    gulp.src('./app/fonts/**')
       .pipe( gulp.dest(path + '/fonts/') )
       .pipe( prod ? gutil.noop() : connect.reload() );
-    gulp.src('./src/videos/**')
+    gulp.src('./app/videos/**')
       .pipe( gulp.dest(path + '/videos/') )
       .pipe( prod ? gutil.noop() : connect.reload() );
   });

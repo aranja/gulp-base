@@ -18,12 +18,12 @@ module.exports = function(gulp) {
           .pipe( rename({dirname: ''}) )
 
           .pipe( jsFilter )
-          .pipe( gulp.dest('./src/js/vendor/') )
+          .pipe( gulp.dest('./app/js/vendor/') )
 
           .pipe( jsFilter.restore() )
 
           .pipe( lessFilter )
-          .pipe( gulp.dest('./src/styles/vendor/') );
+          .pipe( gulp.dest('./app/styles/vendor/') );
       });
 
   });

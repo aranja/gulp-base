@@ -8,7 +8,7 @@ module.exports = function(gulp, gutil) {
     var csso = require('gulp-csso');
     var prod = gutil.env.prod;
 
-    return gulp.src('./src/styles/**/*.less')
+    return gulp.src('./app/styles/**/*.less')
       .pipe(require('gulp-plumber')())
       .pipe(less())
       .pipe(!prod ? gutil.noop() : csso())

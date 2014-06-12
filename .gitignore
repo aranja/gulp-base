@@ -5,6 +5,6 @@ node_modules/
 dist/
 dev/
 dev/
-src/styles/vendor/*
-src/js/vendor/*
+app/styles/vendor/*
+app/js/vendor/*
 npm-debug.log

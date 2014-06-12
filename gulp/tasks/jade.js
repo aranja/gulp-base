@@ -6,7 +6,7 @@ module.exports = function(gulp, gutil) {
   var prod = gutil.env.prod;
 
   gulp.task('jade', function() {
-    return gulp.src('./src/views/*.jade')
+    return gulp.src('./app/views/*.jade')
       .pipe( plumber() )
       .pipe( jade({pretty: !prod}) )
       .on('error', notify.onError(function(error){

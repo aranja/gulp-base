@@ -11,7 +11,7 @@ module.exports = function (gulp, gutil) {
   var svgFilter = filter('**/*.svg');
 
   gulp.task('images', function() {
-    return gulp.src('./src/img/**/*.{png,gif,jpg,jpeg,svg}')
+    return gulp.src('./app/img/**/*.{png,gif,jpg,jpeg,svg}')
       .pipe( plumber() )
       .pipe( prod ? gutil.noop() : changed('./dev/img/') )
     

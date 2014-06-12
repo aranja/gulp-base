@@ -15,7 +15,7 @@ module.exports = function (gulp, gutil) {
 
   gulp.task('browserify', function jihuu(){
     return browserify({
-      entries: ['./src/js/app.js']
+      entries: ['./app/js/app.js']
     })
     .bundle({debug: !prod})
     .on('error', handleErrors)

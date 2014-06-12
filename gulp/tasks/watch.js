@@ -1,10 +1,10 @@
 module.exports = function(gulp) {
 
   gulp.task('watch', function() {
-    gulp.watch('src/styles/**/*.less',['less']);
-    gulp.watch('src/js/**/*.js',['browserify']);
-    gulp.watch(['src/*.html','src/img/**/*.ico','src/fonts/**/*','src/videos/**/*'],['copy']);
-    gulp.watch('src/views/**/*.jade',['jade']);
+    gulp.watch('app/styles/**/*.less',['less']);
+    gulp.watch('app/js/**/*.js',['browserify']);
+    gulp.watch(['app/*.html','app/img/**/*.ico','app/fonts/**/*','app/videos/**/*'],['copy']);
+    gulp.watch('app/views/**/*.jade',['jade']);
   });
 
 };
