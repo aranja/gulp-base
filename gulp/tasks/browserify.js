@@ -20,7 +20,7 @@ module.exports = function (gulp, gutil) {
     .bundle({debug: !prod})
     .on('error', handleErrors)
     .pipe(source('app.js'))
-    .pipe(gulp.dest('./' + (prod ? 'dist' : 'dev' ) + '/js/'))
+    .pipe(gulp.dest('./' + (prod ? 'dist' : 'dev') + '/js/'))
     .pipe(prod ? gutil.noop() : connect.reload());
   });
 };

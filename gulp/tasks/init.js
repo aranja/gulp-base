@@ -7,7 +7,7 @@ module.exports = function (gulp) {
         return console.log(err);
       }
 
-      console.log( stdout );
+      console.log(stdout);
     });
   });
 };

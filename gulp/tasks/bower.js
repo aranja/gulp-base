@@ -15,15 +15,12 @@ module.exports = function(gulp) {
             lessFilter = filter('**/*.less');
 
         return bowerFiles()
-          .pipe( rename({dirname: ''}) )
-
-          .pipe( jsFilter )
-          .pipe( gulp.dest('./app/js/vendor/') )
-
-          .pipe( jsFilter.restore() )
-
-          .pipe( lessFilter )
-          .pipe( gulp.dest('./app/styles/vendor/') );
+          .pipe(rename({dirname: ''}))
+          .pipe(jsFilter)
+          .pipe(gulp.dest('./app/js/vendor/'))
+          .pipe(jsFilter.restore())
+          .pipe(lessFilter)
+          .pipe(gulp.dest('./app/styles/vendor/'));
       });
 
   });

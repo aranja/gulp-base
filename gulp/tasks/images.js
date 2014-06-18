@@ -12,18 +12,18 @@ module.exports = function (gulp, gutil) {
 
   gulp.task('images', function() {
     return gulp.src('./app/img/**/*.{png,gif,jpg,jpeg,svg}')
-      .pipe( plumber() )
-      .pipe( prod ? gutil.noop() : changed('./dev/img/') )
+      .pipe(plumber())
+      .pipe(prod ? gutil.noop() : changed('./dev/img/'))
     
-      .pipe( imgFilter )
-      .pipe( !prod ? gutil.noop() : imagemin() )
-      .pipe( imgFilter.restore() )
+      .pipe(imgFilter)
+      .pipe(!prod ? gutil.noop() : imagemin())
+      .pipe(imgFilter.restore())
 
-      .pipe( svgFilter )
-      .pipe( !prod ? gutil.noop() : svgmin() )
-      .pipe( svgFilter.restore() )
+      .pipe(svgFilter)
+      .pipe(!prod ? gutil.noop() : svgmin())
+      .pipe(svgFilter.restore())
 
-      .pipe( gulp.dest(prod ? './dist/img/' : './dev/img/') )
-      .pipe( prod ? gutil.noop() : connect.reload() );
+      .pipe(gulp.dest(prod ? './dist/img/' : './dev/img/'))
+      .pipe(prod ? gutil.noop() : connect.reload());
   });
 };
