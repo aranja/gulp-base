@@ -1,6 +1,4 @@
-
 module.exports = function(gulp, gutil) {
-
   gulp.task('copy', function() {
     var connect = require('gulp-connect');
     var prod = gutil.env.prod;
@@ -22,5 +20,4 @@ module.exports = function(gulp, gutil) {
       .pipe(gulp.dest(path + '/videos/'))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
-
 };

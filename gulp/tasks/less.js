@@ -1,6 +1,4 @@
-
 module.exports = function(gulp, gutil) {
-
   gulp.task('less', function() {
     var connect = require('gulp-connect');
     var less = require('gulp-less');
@@ -13,8 +11,7 @@ module.exports = function(gulp, gutil) {
       .pipe(less())
       .pipe(!prod ? gutil.noop() : csso())
       .pipe(autoprefixer('> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'))
-      .pipe(gulp.dest( prod ? './dist/css/' : './dev/css'))
+      .pipe(gulp.dest(prod ? './dist/css/' : './dev/css'))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
-
 };

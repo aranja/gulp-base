@@ -1,3 +1,3 @@
-module.exports = function (gulp) {
+module.exports = function(gulp) {
   gulp.task('default', ['build']);
 };

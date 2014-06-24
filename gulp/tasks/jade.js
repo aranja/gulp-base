@@ -9,11 +9,10 @@ module.exports = function(gulp, gutil) {
     return gulp.src('./app/views/*.jade')
       .pipe(plumber())
       .pipe(jade({pretty: !prod}))
-      .on('error', notify.onError(function(error){
+      .on('error', notify.onError(function(error) {
         return error.message.split('\n').pop();
       }))
       .pipe(gulp.dest(prod ? './dist/' : './dev/'))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
-
 };

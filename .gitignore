@@ -4,7 +4,6 @@ bower_components/
 node_modules/
 dist/
 dev/
-dev/
 app/styles/vendor/*
 app/js/vendor/*
 npm-debug.log

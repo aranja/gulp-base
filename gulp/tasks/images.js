@@ -1,4 +1,4 @@
-module.exports = function (gulp, gutil) {
+module.exports = function(gulp, gutil) {
   var plumber = require('gulp-plumber');
   var filter = require('gulp-filter');
   var changed = require('gulp-changed');
@@ -6,7 +6,7 @@ module.exports = function (gulp, gutil) {
   var svgmin = require('gulp-svgmin');
   var connect = require('gulp-connect');
 
-  var prod  = gutil.env.prod;
+  var prod = gutil.env.prod;
   var imgFilter = filter('**/*.{png,gif,jpg,jpeg}');
   var svgFilter = filter('**/*.svg');
 
@@ -14,7 +14,7 @@ module.exports = function (gulp, gutil) {
     return gulp.src('./app/img/**/*.{png,gif,jpg,jpeg,svg}')
       .pipe(plumber())
       .pipe(prod ? gutil.noop() : changed('./dev/img/'))
-    
+
       .pipe(imgFilter)
       .pipe(!prod ? gutil.noop() : imagemin())
       .pipe(imgFilter.restore())

@@ -3,7 +3,7 @@ module.exports = function(gulp, gutil) {
   var connect = require('gulp-connect');
   var prod = gutil.env.prod;
 
-  gulp.task('connect', function () {
+  gulp.task('connect', function() {
     connect.server({
       root: [(prod ? './dist' : './dev')],
       port: (prod ? 8000 : config.port),
