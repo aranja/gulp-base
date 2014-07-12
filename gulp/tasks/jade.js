@@ -6,13 +6,13 @@ module.exports = function(gulp, gutil) {
   var prod = gutil.env.prod;
 
   gulp.task('jade', function() {
-    return gulp.src('./app/views/*.jade')
+    return gulp.src(gulp.config.source + '/views/*.jade')
       .pipe(plumber())
       .pipe(jade({pretty: !prod}))
       .on('error', notify.onError(function(error) {
         return error.message.split('\n').pop();
       }))
-      .pipe(gulp.dest(prod ? './dist/' : './dev/'))
+      .pipe(gulp.dest(gulp.config.target))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
 };

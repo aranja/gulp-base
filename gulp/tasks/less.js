@@ -6,12 +6,12 @@ module.exports = function(gulp, gutil) {
     var csso = require('gulp-csso');
     var prod = gutil.env.prod;
 
-    return gulp.src('./app/styles/**/*.less')
+    return gulp.src(gulp.config.source + '/styles/**/*.less')
       .pipe(require('gulp-plumber')())
       .pipe(less())
       .pipe(!prod ? gutil.noop() : csso())
       .pipe(autoprefixer('> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'))
-      .pipe(gulp.dest(prod ? './dist/css/' : './dev/css'))
+      .pipe(gulp.dest(gulp.config.target + '/css'))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
 };

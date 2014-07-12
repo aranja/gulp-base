@@ -1,8 +1,13 @@
 module.exports = function(gulp) {
   gulp.task('watch', function() {
-    gulp.watch('app/styles/**/*.less', ['less']);
-    gulp.watch('app/js/**/*.js', ['browserify']);
-    gulp.watch(['app/*.html', 'app/img/**/*.ico', 'app/fonts/**/*', 'app/videos/**/*'], ['copy']);
-    gulp.watch('app/views/**/*.jade', ['jade']);
+    gulp.watch(gulp.config.source + '/styles/**/*.less', ['less']);
+    gulp.watch(gulp.config.source + '/js/**/*.js', ['browserify']);
+    gulp.watch([
+        gulp.config.source + '/*.html',
+        gulp.config.source + '/img/**/*.ico',
+        gulp.config.source + '/fonts/**/*',
+        gulp.config.source + '/videos/**/*'
+    ], ['copy']);
+    gulp.watch(gulp.config.source + '/views/**/*.jade', ['jade']);
   });
 };

@@ -7,13 +7,13 @@ module.exports = function(gulp, gutil) {
   var prod = gutil.env.prod;
 
   gulp.task('images', function() {
-    return gulp.src('./app/img/**/*.{png,gif,jpg,jpeg,svg}')
+    return gulp.src(gulp.config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}')
       .pipe(plumber())
-      .pipe(prod ? gutil.noop() : changed('./dev/img/'))
+      .pipe(prod ? gutil.noop() : changed(gulp.config.target + '/img/'))
 
       .pipe(!prod ? gutil.noop() : imagemin())
 
-      .pipe(gulp.dest(prod ? './dist/img/' : './dev/img/'))
+      .pipe(gulp.dest(gulp.config.target + '/img/'))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
 };

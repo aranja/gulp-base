@@ -17,10 +17,10 @@ module.exports = function(gulp) {
         return bowerFiles()
           .pipe(rename({dirname: ''}))
           .pipe(jsFilter)
-          .pipe(gulp.dest('./app/js/vendor/'))
+          .pipe(gulp.dest(gulp.config.source + '/js/vendor/'))
           .pipe(jsFilter.restore())
           .pipe(lessFilter)
-          .pipe(gulp.dest('./app/styles/vendor/'));
+          .pipe(gulp.dest(gulp.config.source + '/styles/vendor/'));
       });
   });
 };
