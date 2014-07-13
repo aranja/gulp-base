@@ -5,7 +5,7 @@ A base for projects using Gulp. Pulls in a [public base](https://github.com/rtho
 ## Tech
 
 - Gulp Build system
-- SCSS for CSS preprocessing.
+- LESS for CSS preprocessing.
 - Jade templating engine. 
 - Browserify for module loading JavaScript.
 - Image minification.
