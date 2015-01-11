@@ -1,5 +1,5 @@
 module.exports = function(gulp) {
-  gulp.task('watch', function() {
+  gulp.task('watch', ['build'], function() {
     gulp.watch(gulp.config.source + '/styles/**/*.less', ['less']);
     gulp.watch(gulp.config.source + '/js/**/*.js', ['browserify']);
     gulp.watch([
