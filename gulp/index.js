@@ -8,10 +8,15 @@ var tasks = glob.sync('*.js', {
 gulp.config = require(gutil.env.prod ? './config.prod.json' : './config.json');
 
 var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
 
 gulp.srcWithErrorHandling = function() {
   return gulp.src.apply(gulp, Array.prototype.slice.call(arguments))
-    .pipe(plumber());
+    .pipe(plumber(function(err) {
+      notify.onError(err).apply(this, arguments);
+      gutil.log(gutil.colors.red(err.toString()));
+      this.emit('end');
+    }));
 }
 
 tasks.forEach(function(task) {

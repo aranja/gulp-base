@@ -15,10 +15,6 @@ module.exports = function(gulp, gutil) {
         rootpath: '../../',
         relativeUrls: true
       }))
-      .on('error', function (err) {
-        gutil.log(err.message);
-        this.emit('end');
-      })
       .pipe(!prod ? gutil.noop() : csso())
       .pipe(autoprefixer('> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'))
       .pipe(gulp.dest(gulp.config.target + '/css'))
