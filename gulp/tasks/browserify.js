@@ -15,9 +15,10 @@ module.exports = function (gulp, gutil) {
 
   gulp.task('browserify', function() {
     return browserify({
-        entries: ['./' + gulp.config.source + '/js/app.js']
+        entries: ['./' + gulp.config.source + '/js/app.js'],
+        debug: !prod
       })
-      .bundle({debug: !prod})
+      .bundle()
       .on('error', handleErrors)
       .pipe(source('app.js'))
       .pipe(gulp.dest(gulp.config.target + '/js/'))
