@@ -49,6 +49,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-util": "^2.2.14",
     "main-bower-files": "^1.0.0",
+    "gulp-watch": "^3.0.0",
     "rimraf": "^2.2.8",
     "run-sequence": "^0.3.6",
     "vinyl-source-stream": "^0.1.1"
