@@ -9,7 +9,14 @@ module.exports = function(gulp, gutil) {
 
     return gulp.src(gulp.config.source + '/styles/**/*.less')
       .pipe(plumber())
-      .pipe(less())
+      .pipe(less({
+        paths: [
+          gulp.config.source + '/styles',
+          'node_modules'
+        ],
+        rootpath: '../../',
+        relativeUrls: true
+      }))
       .pipe(!prod ? gutil.noop() : csso())
       .pipe(autoprefixer('> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'))
       .on('error', gutil.log)

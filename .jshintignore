@@ -1,5 +1,3 @@
-bower_components
 dist
 dev
-app/js/vendor
 node_modules
