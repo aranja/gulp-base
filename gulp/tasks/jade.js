@@ -1,7 +1,6 @@
 module.exports = function(gulp, gutil) {
   var jade = require('gulp-jade');
   var connect = require('gulp-connect');
-  var errorHandler = require('./error-handler');
   var prod = gutil.env.prod;
 
   gulp.task('jade', function() {
