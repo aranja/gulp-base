@@ -20,14 +20,14 @@
     "url": "http://github.com/rthor/gulp-base.git"
   },
   "author": {
-    "name": "Ragnar Þór Valgeirsson (rthor)",
-    "email": "ragnar.valgeirsson@gmail.com",
-    "url": "http://rthor.is"
+    "name": "Aranja",
+    "email": "aranja@aranja.com",
+    "url": "http://aranja.com"
   },
   "bugs": {
-    "url": "https://github.com/rthor/gulp-base/issues"
+    "url": "https://github.com/aranja/gulp-base/issues"
   },
-  "homepage": "https://github.com/rthor/gulp-base",
+  "homepage": "https://github.com/aranja/gulp-base",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.3.3",
