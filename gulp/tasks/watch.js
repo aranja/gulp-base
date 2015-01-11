@@ -1,7 +1,7 @@
 module.exports = function(gulp) {
   var watch = require('gulp-watch');
 
-  gulp.task('watch', function() {
+  gulp.task('watch', ['build'], function() {
     watch(gulp.config.source + '/styles/**/*.less', function() {
       gulp.start('less');
     });

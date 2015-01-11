@@ -23,12 +23,6 @@ $ git clone https://github.com/aranja/gulp-base.git
 $ [sudo] npm i
 ```
 
-### 3. Build the project:
-
-```sh
-$ gulp init
-```
-
 ---
 
 The server can always be booted up by the `gulp server` and for a production build, simply pass the flag `--prod`.
