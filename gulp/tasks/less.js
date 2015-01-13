@@ -6,9 +6,15 @@ module.exports = function(gulp, gutil) {
     var csso = require('gulp-csso');
     var prod = gutil.env.prod;
 
-    return gulp.src(gulp.config.source + '/styles/**/*.less')
-      .pipe(require('gulp-plumber')())
-      .pipe(less())
+    return gulp.srcWithErrorHandling(gulp.config.source + '/styles/**/*.less')
+      .pipe(less({
+        paths: [
+          gulp.config.source + '/styles',
+          'node_modules'
+        ],
+        rootpath: '../../',
+        relativeUrls: true
+      }))
       .pipe(!prod ? gutil.noop() : csso())
       .pipe(autoprefixer('> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'))
       .pipe(gulp.dest(gulp.config.target + '/css'))
