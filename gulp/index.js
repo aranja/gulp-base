@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var glob = require('glob');
@@ -17,7 +19,7 @@ gulp.srcWithErrorHandling = function() {
       gutil.log(gutil.colors.red(err.toString()));
       this.emit('end');
     }));
-}
+};
 
 tasks.forEach(function(task) {
   require('./tasks/' + task)(gulp, gutil);

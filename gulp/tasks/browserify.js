@@ -1,4 +1,6 @@
-module.exports = function (gulp, gutil) {
+'use strict';
+
+module.exports = function(gulp, gutil) {
   var notify = require('gulp-notify');
   var browserify = require('browserify');
   var source = require('vinyl-source-stream');
@@ -7,13 +9,13 @@ module.exports = function (gulp, gutil) {
 
   function handleErrors() {
     notify.onError({
-      title: "Compile Error",
-      message: "<%= error.message %>"
+      title: 'Compile Error',
+      message: '<%= error.message %>'
     }).apply(this, arguments);
     this.emit('end');
   }
 
-  gulp.task('browserify', function() {
+  gulp.task('browserify', ['lint'], function() {
     return browserify({
         entries: ['./' + gulp.config.source + '/js/app.js'],
         debug: !prod

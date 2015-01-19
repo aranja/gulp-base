@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(gulp, gutil) {
   gulp.task('copy', function() {
     var connect = require('gulp-connect');
