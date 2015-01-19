@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(gulp, gutil) {
   var jade = require('gulp-jade');
   var connect = require('gulp-connect');

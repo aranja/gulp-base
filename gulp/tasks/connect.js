@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(gulp, gutil) {
   var connect = require('gulp-connect');
   var prod = gutil.env.prod;
