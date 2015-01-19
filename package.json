@@ -41,6 +41,7 @@
     "gulp-eslint": "^0.2.0",
     "gulp-imagemin": "^2.1.0",
     "gulp-jade": "^0.10.0",
+    "gulp-jscs": "^1.4.0",
     "gulp-less": "^2.0.1",
     "gulp-notify": "^2.1.0",
     "gulp-open": "^0.3.1",
