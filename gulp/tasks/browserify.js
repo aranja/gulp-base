@@ -13,7 +13,7 @@ module.exports = function (gulp, gutil) {
     this.emit('end');
   }
 
-  gulp.task('browserify', function() {
+  gulp.task('browserify', ['lint'], function() {
     return browserify({
         entries: ['./' + gulp.config.source + '/js/app.js'],
         debug: !prod
