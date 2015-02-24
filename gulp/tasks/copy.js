@@ -7,6 +7,7 @@ module.exports = function(gulp, gutil) {
 
     gulp.src([
       source + '/*.html',
+      source + '/app.yaml',
       source + '/img/**/*.ico',
       source + '/js/vendor/*.js',
       source + '/fonts/**',
