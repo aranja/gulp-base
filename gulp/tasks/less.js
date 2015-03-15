@@ -13,7 +13,9 @@ module.exports = function(gulp, gutil) {
           'node_modules'
         ],
         rootpath: '../../',
-        relativeUrls: true
+        relativeUrls: true,
+        strictMath: true,
+        strictUnits: true
       }))
       .pipe(!prod ? gutil.noop() : csso())
       .pipe(autoprefixer({
