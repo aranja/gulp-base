@@ -1,26 +1,22 @@
 module.exports = function (gulp, gutil) {
-  var notify = require('gulp-notify');
   var browserify = require('browserify');
-  var source = require('vinyl-source-stream');
   var connect = require('gulp-connect');
+  var uglify = require('gulp-uglify');
+  var transform = require('vinyl-transform');
   var prod = gutil.env.prod;
 
-  function handleErrors() {
-    notify.onError({
-      title: "Compile Error",
-      message: "<%= error.message %>"
-    }).apply(this, arguments);
-    this.emit('end');
-  }
+  var browserified = transform(function(filename) {
+    var b = browserify({
+      debug: !prod,
+      entries: filename
+    });
+    return b.bundle();
+  });
 
   gulp.task('browserify', function() {
-    return browserify({
-        entries: ['./' + gulp.config.source + '/js/app.js'],
-        debug: !prod
-      })
-      .bundle()
-      .on('error', handleErrors)
-      .pipe(source('app.js'))
+    return gulp.srcWithErrorHandling(gulp.config.source + '/js/app.js')
+      .pipe(browserified)
+      .pipe(!prod ? gutil.noop() : uglify({preserveComments: 'some'}))
       .pipe(gulp.dest(gulp.config.target + '/js/'))
       .pipe(prod ? gutil.noop() : connect.reload());
   });
