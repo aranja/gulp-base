@@ -45,11 +45,12 @@
     "gulp-open": "^0.3.1",
     "gulp-plumber": "^1.0.0",
     "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.2",
     "gulp-watch": "^4.1.1",
     "rimraf": "^2.2.8",
     "run-sequence": "^1.0.2",
-    "vinyl-source-stream": "^1.0.0"
+    "vinyl-transform": "^1.0.0"
   },
   "dependencies": {
     "jquery": "^2.1.3",
