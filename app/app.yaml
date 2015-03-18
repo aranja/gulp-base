@@ -1,0 +1,29 @@
+application: project-name
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+  login: admin
+  secure: always
+- url: /(.*(\.js|.html|.css|.png|.jpg|.woff|.svg|.eot|.ttf))
+  static_files: \1
+  upload: (.*(\.js|.html|.css|.png|.jpg|.woff|.svg|.eot|.ttf))
+  login: admin
+  secure: always
+- url: /(.*\.mp4)
+  mime_type: video/mp4
+  static_files: \1
+  upload: (.*\.mp4)
+  expiration: "30d"
+
+# To route all other urls to index.html. Useful for single page apps using pushState.
+#- url: /(.*)
+#  static_files: index.html
+#  upload: index.html
+#  login: admin
+#  secure: always
