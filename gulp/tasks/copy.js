@@ -9,7 +9,6 @@ module.exports = function(gulp, gutil) {
       source + '/*.html',
       source + '/app.yaml',
       source + '/img/**/*.ico',
-      source + '/js/vendor/*.js',
       source + '/fonts/**',
       source + '/videos/**'
     ], {base: source})
