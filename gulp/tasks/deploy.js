@@ -15,8 +15,9 @@ module.exports = function(gulp, gutil) {
     child.stderr.pipe(process.stderr);
   });
 
-  gulp.task('deploy-log', function(cb) {
+  gulp.task('deploy-log', function() {
     var appName = getAppName();
+    var appUrl = '';
     if (version) {
       appUrl = 'https://' + version + '-dot-' + appName + '.appspot.com/';
     } else {

@@ -1,5 +1,4 @@
 module.exports = function(gulp, gutil) {
-  var plumber = require('gulp-plumber');
   var changed = require('gulp-changed');
   var imagemin = require('gulp-imagemin');
   var connect = require('gulp-connect');

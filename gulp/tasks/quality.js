@@ -1,6 +1,6 @@
 var jshint = require('gulp-jshint');
 
-module.exports = function(gulp, gutil) {
+module.exports = function(gulp) {
   gulp.task('code-quality', function() {
     return gulp.srcWithErrorHandling([
       gulp.config.source + '/js/**/*.js',
