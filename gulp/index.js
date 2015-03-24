@@ -12,10 +12,12 @@ var notify = require('gulp-notify');
 
 gulp.srcWithErrorHandling = function() {
   return gulp.src.apply(gulp, Array.prototype.slice.call(arguments))
-    .pipe(plumber(function(err) {
-      notify.onError(err).apply(this, arguments);
-      gutil.log(gutil.colors.red(err.toString()));
-      this.emit('end');
+    .pipe(plumber({
+      onError: function(err) {
+        notify.onError(err).apply(this, arguments);
+        gutil.log(gutil.colors.red(err.toString()));
+        this.emit('end');
+      }
     }));
 }
 
