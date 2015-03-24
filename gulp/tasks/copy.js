@@ -3,7 +3,6 @@ module.exports = function(gulp, gutil) {
     var connect = require('gulp-connect');
     var prod = gutil.env.prod;
     var source = gulp.config.source;
-    var target = gulp.config.target;
 
     gulp.src([
       source + '/*.html',

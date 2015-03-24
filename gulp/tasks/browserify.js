@@ -1,4 +1,4 @@
-module.exports = function (gulp, gutil) {
+module.exports = function(gulp, gutil) {
   var browserify = require('browserify');
   var connect = require('gulp-connect');
   var uglify = require('gulp-uglify');
@@ -13,7 +13,7 @@ module.exports = function (gulp, gutil) {
     return b.bundle();
   });
 
-  gulp.task('browserify', function() {
+  gulp.task('browserify', ['lint'], function() {
     return gulp.srcWithErrorHandling(gulp.config.source + '/js/app.js')
       .pipe(browserified)
       .pipe(!prod ? gutil.noop() : uglify({preserveComments: 'some'}))
