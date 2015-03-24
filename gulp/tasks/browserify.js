@@ -13,7 +13,7 @@ module.exports = function (gulp, gutil) {
     return b.bundle();
   });
 
-  gulp.task('browserify', function() {
+  gulp.task('browserify', ['code-quality'], function() {
     return gulp.srcWithErrorHandling(gulp.config.source + '/js/app.js')
       .pipe(browserified)
       .pipe(!prod ? gutil.noop() : uglify({preserveComments: 'some'}))
