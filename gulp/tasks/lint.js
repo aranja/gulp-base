@@ -7,15 +7,15 @@ module.exports = function(gulp) {
     './gulp/tasks/*.js'
   ];
 
-  gulp.task('jscs', function() {
+  gulp.task('lint-jscs', function() {
     return gulp.srcWithErrorHandling(files).pipe(jscs());
   });
 
-  gulp.task('jshint', function() {
+  gulp.task('lint-jshint', function() {
     return gulp.srcWithErrorHandling(files)
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'));
   });
 
-  gulp.task('code-quality', ['jshint', 'jscs']);
+  gulp.task('lint', ['lint-jshint', 'lint-jscs']);
 };
