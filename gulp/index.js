@@ -19,7 +19,7 @@ gulp.srcWithErrorHandling = function() {
         this.emit('end');
       }
     }));
-}
+};
 
 tasks.forEach(function(task) {
   require('./tasks/' + task)(gulp, gutil);

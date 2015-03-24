@@ -1,12 +1,10 @@
-module.exports = function(gulp, gutil) {
+module.exports = function(gulp) {
   var connect = require('gulp-connect');
-  var prod = gutil.env.prod;
 
   gulp.task('connect', function() {
     connect.server({
       root: [gulp.config.target],
-      port: gulp.config.port,
-      livereload: !prod
+      port: gulp.config.port
     });
   });
 };
