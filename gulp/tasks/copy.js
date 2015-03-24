@@ -1,6 +1,6 @@
 module.exports = function(gulp, gutil) {
   gulp.task('copy', function() {
-    var connect = require('gulp-connect');
+    var livereload = require('gulp-livereload');
     var prod = gutil.env.prod;
     var source = gulp.config.source;
 
@@ -12,6 +12,6 @@ module.exports = function(gulp, gutil) {
       source + '/videos/**'
     ], {base: source})
       .pipe(gulp.dest(gulp.config.target))
-      .pipe(prod ? gutil.noop() : connect.reload());
+      .pipe(prod ? gutil.noop() : livereload());
   });
 };
