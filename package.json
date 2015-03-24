@@ -40,6 +40,7 @@
     "gulp-csso": "^1.0.0",
     "gulp-imagemin": "^2.1.0",
     "gulp-jade": "^1.0.0",
+    "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.4",
     "gulp-less": "^3.0.1",
     "gulp-notify": "^2.1.0",

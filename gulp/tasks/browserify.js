@@ -1,4 +1,4 @@
-module.exports = function (gulp, gutil) {
+module.exports = function(gulp, gutil) {
   var browserify = require('browserify');
   var connect = require('gulp-connect');
   var uglify = require('gulp-uglify');
