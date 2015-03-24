@@ -2,7 +2,8 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
 
-module.exports = function(gulp, gutil) {    var livereload = require('gulp-livereload');
+module.exports = function(gulp, gutil) {
+  var livereload = require('gulp-livereload');
   var prod = gutil.env.prod;
 
   gulp.task('less', function() {
