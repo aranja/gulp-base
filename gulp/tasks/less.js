@@ -1,6 +1,6 @@
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
-var csso = require('gulp-csso');
+var minifyCSS = require('gulp-minify-css');
 
 module.exports = function(gulp, gutil) {
   var livereload = require('gulp-livereload');
@@ -18,7 +18,7 @@ module.exports = function(gulp, gutil) {
         strictMath: true,
         strictUnits: true
       }))
-      .pipe(!prod ? gutil.noop() : csso())
+      .pipe(!prod ? gutil.noop() : minifyCSS())
       .pipe(autoprefixer({
         browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
       }))
