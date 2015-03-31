@@ -2,9 +2,9 @@ var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
 
 module.exports = function(gulp) {
-  livereload.listen();
-
   gulp.task('watch', ['build'], function() {
+    livereload.listen();
+
     watch(gulp.config.source + '/styles/**/*.less', function() {
       gulp.start('less');
     });
