@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href="../css/main.css")
+    link(rel="stylesheet", href="https://highlightjs.org/static/styles/github.css")
+    link(rel="stylesheet", href="highlight.css")
+    style.
+      body {
+        padding: 20px;
+      }
+  body
+    h1 Legendary style guide
+    each component in components
+      .markdown-body(id="component-" + component.name)!= component.docs
+      
+    nav
+      ul
+        each component in components
+          li
+            a(href="#component-" +component.name)= component.title

@@ -1,6 +1,7 @@
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
+var lessGlob = require('less-plugin-glob');
 
 module.exports = function(gulp, gutil) {
   var livereload = require('gulp-livereload');
@@ -10,9 +11,10 @@ module.exports = function(gulp, gutil) {
     return gulp.srcWithErrorHandling(gulp.config.source + '/styles/**/*.less')
       .pipe(less({
         paths: [
-          gulp.config.source + '/styles',
-          'node_modules'
+          gulp.config.source,
+          'node_modules',
         ],
+        //plugins: [lessGlob],
         rootpath: '../../',
         relativeUrls: true,
         strictMath: true,

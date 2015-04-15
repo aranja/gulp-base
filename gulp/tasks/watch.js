@@ -5,11 +5,11 @@ module.exports = function(gulp) {
   gulp.task('watch', ['build'], function() {
     livereload.listen();
 
-    watch(gulp.config.source + '/styles/**/*.less', function() {
+    watch(gulp.config.source + '/{components,styles}/**/*.less', function() {
       gulp.start('less');
     });
 
-    watch(gulp.config.source + '/js/**/*.js', function() {
+    watch(gulp.config.source + '/{components,js}/**/*.js', function() {
       gulp.start('browserify');
     });
 
@@ -28,6 +28,10 @@ module.exports = function(gulp) {
 
     watch(gulp.config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}', function() {
       gulp.start('images');
+    });
+
+    watch(gulp.config.source + '/components/{**/*.md,index.jade}', function() {
+      gulp.start('tux');
     });
   });
 };
