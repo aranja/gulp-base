@@ -30,8 +30,8 @@ module.exports = function(gulp) {
       gulp.start('images');
     });
 
-    watch(gulp.config.source + '/components/{**/*.md,index.jade}', function() {
-      gulp.start('tux');
+    watch([gulp.config.source + '/components/**/*.md', gulp.config.source + '/styleguide/*'], function() {
+      gulp.start('styleguide');
     });
   });
 };
