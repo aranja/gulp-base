@@ -4,6 +4,7 @@ html(lang="en")
     link(rel="stylesheet", href="../css/main.css")
     link(rel="stylesheet", href="https://highlightjs.org/static/styles/github.css")
     link(rel="stylesheet", href="highlight.css")
+    link(rel="stylesheet", href="styleguide.css")
     style.
       body {
         padding: 20px;
@@ -14,7 +15,7 @@ html(lang="en")
       .markdown-body(id="component-" + component.name)!= component.docs
       
     nav
-      ul
+      ul.Navigation
         each component in components
-          li
-            a(href="#component-" +component.name)= component.title
+          li.Navigation-item
+            a.Navigation-link(href="#component-" +component.name)= component.title

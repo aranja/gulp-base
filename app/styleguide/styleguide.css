@@ -1,0 +1,18 @@
+.Navigation {
+  background: #ccc;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.Navigation-item {
+  display: inline-block;
+}
+
+.Navigation-link {
+  display: inline-block;
+  padding: 10px;
+}
