@@ -30,6 +30,7 @@
   "homepage": "https://github.com/aranja/gulp-base",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.6.4",
     "browserify": "^9.0.3",
     "browserify-shim": "^3.8.2",
     "glob": "^5.0.1",

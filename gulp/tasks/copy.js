@@ -1,7 +1,5 @@
 module.exports = function(gulp, gutil) {
   gulp.task('copy', function() {
-    var livereload = require('gulp-livereload');
-    var prod = gutil.env.prod;
     var source = gulp.config.source;
 
     gulp.src([
@@ -11,7 +9,6 @@ module.exports = function(gulp, gutil) {
       source + '/fonts/**',
       source + '/videos/**'
     ], {base: source})
-      .pipe(gulp.dest(gulp.config.target))
-      .pipe(prod ? gutil.noop() : livereload());
+      .pipe(gulp.dest(gulp.config.target));
   });
 };
