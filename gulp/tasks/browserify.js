@@ -1,5 +1,4 @@
 var browserify = require('browserify');
-var livereload = require('gulp-livereload');
 var uglify = require('gulp-uglify');
 var transform = require('vinyl-transform');
 
@@ -17,7 +16,6 @@ module.exports = function(gulp, gutil) {
     return gulp.srcWithErrorHandling(gulp.config.source + '/js/app.js')
       .pipe(bundle)
       .pipe(!prod ? gutil.noop() : uglify({preserveComments: 'some'}))
-      .pipe(gulp.dest(gulp.config.target + '/js/'))
-      .pipe(prod ? gutil.noop() : livereload());
+      .pipe(gulp.dest(gulp.config.target + '/js/'));
   });
 };

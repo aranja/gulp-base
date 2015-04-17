@@ -3,7 +3,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 
 module.exports = function(gulp, gutil) {
-  var livereload = require('gulp-livereload');
   var prod = gutil.env.prod;
 
   gulp.task('less', function() {
@@ -22,7 +21,6 @@ module.exports = function(gulp, gutil) {
       .pipe(autoprefixer({
         browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
       }))
-      .pipe(gulp.dest(gulp.config.target + '/css'))
-      .pipe(prod ? gutil.noop() : livereload());
+      .pipe(gulp.dest(gulp.config.target + '/css'));
   });
 };
