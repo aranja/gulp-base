@@ -1,4 +1,4 @@
-module.exports = function(gulp, gutil) {
+module.exports = function(gulp) {
   gulp.task('copy', function() {
     var source = gulp.config.source;
 
