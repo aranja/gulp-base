@@ -6,7 +6,7 @@ var minifyCSS = require('gulp-minify-css');
 var config = require('../config');
 var errorHandler = require('../utils/error-handler');
 
-gulp.task('less', function() {
+gulp.task('styles', function() {
   return gulp.src(config.source + '/styles/**/*.less')
     .pipe(less({
       paths: [

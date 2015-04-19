@@ -7,11 +7,11 @@ gulp.task('watch', ['build'], function() {
   livereload.listen();
 
   watch(config.source + '/styles/**/*.less', function() {
-    gulp.start('less');
+    gulp.start('styles');
   });
 
   watch(config.source + '/js/**/*.js', function() {
-    gulp.start('browserify');
+    gulp.start('scripts');
   });
 
   watch([
@@ -24,7 +24,7 @@ gulp.task('watch', ['build'], function() {
   });
 
   watch(config.source + '/views/**/*.jade', function() {
-    gulp.start('jade');
+    gulp.start('templates');
   });
 
   watch(config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}', function() {

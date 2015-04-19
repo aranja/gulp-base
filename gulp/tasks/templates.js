@@ -3,7 +3,7 @@ var jade = require('gulp-jade');
 var config = require('../config');
 var errorHandler = require('../utils/error-handler');
 
-gulp.task('jade', function() {
+gulp.task('templates', function() {
   return gulp.src(config.source + '/views/*.jade')
     .pipe(jade({
       pretty: config.debug

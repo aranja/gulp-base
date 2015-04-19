@@ -7,7 +7,7 @@ var buffer = require('vinyl-buffer');
 var config = require('../config');
 var errorHandler = require('../utils/error-handler');
 
-gulp.task('browserify', ['lint'], function() {
+gulp.task('scripts', ['lint'], function() {
   return browserify({
       entries: ['./' + config.source + '/js/app.js'],
       debug: config.debug
