@@ -1,14 +1,13 @@
 var gulp = require('gulp');
+var config = require('../config');
 
-module.exports = function(config) {
-  gulp.task('copy', function() {
-    gulp.src([
-      source + '/*.html',
-      source + '/app.yaml',
-      source + '/img/**/*.ico',
-      source + '/fonts/**',
-      source + '/videos/**'
-    ], {base: config.source})
-      .pipe(gulp.dest(config.target));
-  });
-};
+gulp.task('copy', function() {
+  gulp.src([
+    config.source + '/*.html',
+    config.source + '/app.yaml',
+    config.source + '/img/**/*.ico',
+    config.source + '/fonts/**',
+    config.source + '/videos/**'
+  ], {base: config.source})
+    .pipe(gulp.dest(config.target));
+});

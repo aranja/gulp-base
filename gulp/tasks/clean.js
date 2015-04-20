@@ -1,9 +1,8 @@
 var gulp = require('gulp');
+var config = require('../config');
 
-module.exports = function(config) {
-  var rimraf = require('rimraf');
+var rimraf = require('rimraf');
 
-  gulp.task('clean', function(cb) {
-    rimraf(config.target, cb);
-  });
-};
+gulp.task('clean', function(cb) {
+  rimraf(config.target, cb);
+});
