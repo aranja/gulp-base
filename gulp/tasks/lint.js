@@ -8,11 +8,12 @@ module.exports = function(gulp) {
   ];
 
   gulp.task('lint-jscs', function() {
-    return gulp.srcWithErrorHandling(files).pipe(jscs());
+    return gulp.src(files)
+      .pipe(jscs());
   });
 
   gulp.task('lint-jshint', function() {
-    return gulp.srcWithErrorHandling(files)
+    return gulp.src(files)
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'));
   });
