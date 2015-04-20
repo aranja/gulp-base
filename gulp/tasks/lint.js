@@ -1,9 +1,10 @@
+var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 
-module.exports = function(gulp) {
+module.exports = function(config) {
   var files = [
-    gulp.config.source + '/js/**/*.js',
+    config.source + '/js/**/*.js',
     './gulp/tasks/*.js'
   ];
 

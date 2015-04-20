@@ -1,16 +1,16 @@
+var gulp = require('gulp');
+var gutil = require('gulp-util');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 var errorHandler = require('../utils/error-handler');
 
-module.exports = function(gulp, gutil) {
-  var prod = gutil.env.prod;
-
+module.exports = function(config) {
   gulp.task('less', function() {
-    return gulp.src(gulp.config.source + '/styles/**/*.less')
+    return gulp.src(config.source + '/styles/**/*.less')
       .pipe(less({
         paths: [
-          gulp.config.source + '/styles',
+          config.source + '/styles',
           'node_modules'
         ],
         rootpath: '../../',
@@ -18,11 +18,11 @@ module.exports = function(gulp, gutil) {
         strictMath: true,
         strictUnits: true
       }))
-      .pipe(!prod ? gutil.noop() : minifyCSS())
+      .pipe(config.minify ? minifyCSS() : gutil.noop())
       .pipe(autoprefixer({
         browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
       }))
       .on('error', errorHandler)
-      .pipe(gulp.dest(gulp.config.target + '/css'));
+      .pipe(gulp.dest(config.target + '/css'));
   });
 };

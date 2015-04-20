@@ -1,5 +1,7 @@
 {
   "port": 8000,
   "source": "app",
-  "target": "dist"
+  "target": "dist",
+  "minify": true,
+  "debug": false
 }

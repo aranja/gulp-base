@@ -1,11 +1,14 @@
-module.exports = function(gulp, gutil) {
-  var exec = require('child_process').exec;
-  var fs = require('fs');
-  var runSequence = require('run-sequence');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var exec = require('child_process').exec;
+var fs = require('fs');
+var runSequence = require('run-sequence');
+
+module.exports = function(config) {
   var version = gutil.env.version;
 
   gulp.task('deploy-appengine', function(cb) {
-    var cmd = 'appcfg.py update --oauth2 ' + gulp.config.target;
+    var cmd = 'appcfg.py update --oauth2 ' + config.target;
     if (version) {
       cmd += ' --version ' + version;
     }
@@ -31,7 +34,7 @@ module.exports = function(gulp, gutil) {
   });
 
   function getAppName() {
-    var appYaml = fs.readFileSync(gulp.config.target + '/app.yaml', {encoding: 'utf8'});
+    var appYaml = fs.readFileSync(config.target + '/app.yaml', {encoding: 'utf8'});
     var appMatch = appYaml.match(/^application:\s*(.+)$/im);
     if (!appMatch || !appMatch[1]) {
       throw new Error('Could not find application name in app.yaml');

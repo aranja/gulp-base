@@ -1,15 +1,15 @@
+var gulp = require('gulp');
+var gutil = require('gulp-util');
 var jade = require('gulp-jade');
 var errorHandler = require('../utils/error-handler');
 
-module.exports = function(gulp, gutil) {
-  var prod = gutil.env.prod;
-
+module.exports = function(config) {
   gulp.task('jade', function() {
-    return gulp.src(gulp.config.source + '/views/*.jade')
+    return gulp.src(config.source + '/views/*.jade')
       .pipe(jade({
-        pretty: !prod
+        pretty: config.debug
       }))
       .on('error', errorHandler)
-      .pipe(gulp.dest(gulp.config.target));
+      .pipe(gulp.dest(config.target));
   });
 };
