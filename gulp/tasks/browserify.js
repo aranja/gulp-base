@@ -10,12 +10,12 @@ module.exports = function(config) {
   gulp.task('browserify', ['lint'], function() {
     return browserify({
         entries: ['./' + config.source + '/js/app.js'],
-        debug: !config.prod
+        debug: config.debug
       })
       .bundle()
       .pipe(source('app.js'))
       .pipe(buffer())
-      .pipe(!config.prod ? gutil.noop() : uglify({preserveComments: 'some'}))
+      .pipe(config.minify ? uglify({preserveComments: 'some'}) : gutil.noop())
       .on('error', errorHandler)
       .pipe(gulp.dest(config.target + '/js/'));
   });
