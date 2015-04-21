@@ -1,12 +1,14 @@
-module.exports = function(gulp, gutil) {
-  var changed = require('gulp-changed');
-  var imagemin = require('gulp-imagemin');
-  var prod = gutil.env.prod;
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var changed = require('gulp-changed');
+var imagemin = require('gulp-imagemin');
+var config = require('../config');
+var errorHandler = require('../utils/error-handler');
 
-  gulp.task('images', function() {
-    return gulp.srcWithErrorHandling(gulp.config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}')
-      .pipe(prod ? gutil.noop() : changed(gulp.config.target + '/img/'))
-      .pipe(!prod ? gutil.noop() : imagemin())
-      .pipe(gulp.dest(gulp.config.target + '/img/'));
-  });
-};
+gulp.task('images', function() {
+  return gulp.src(config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}')
+    .pipe(!config.minify ? changed(config.target + '/img/') : gutil.noop())
+    .pipe(config.minify ? imagemin() : gutil.noop())
+    .on('error', errorHandler)
+    .pipe(gulp.dest(config.target + '/img/'));
+});

@@ -1,12 +1,12 @@
+var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
+var config = require('../config');
 
-module.exports = function(gulp) {
-  gulp.task('browsersync', ['watch'], function() {
-    browserSync.init({
-      server: {
-        baseDir: gulp.config.target
-      }
-    });
-    gulp.watch(gulp.config.target + '/**/*').on('change', browserSync.reload);
+gulp.task('browsersync', ['watch'], function() {
+  browserSync.init({
+    server: {
+      baseDir: config.target
+    }
   });
-};
+  gulp.watch(config.target + '/**/*').on('change', browserSync.reload);
+});

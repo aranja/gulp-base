@@ -1,7 +1,6 @@
+var gulp = require('gulp');
 var runSequence = require('run-sequence');
 
-module.exports = function(gulp) {
-  gulp.task('server', function() {
-    runSequence('browsersync', 'open');
-  });
-};
+gulp.task('server', function() {
+  runSequence('browsersync', 'open');
+});

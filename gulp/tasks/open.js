@@ -1,10 +1,10 @@
-module.exports = function(gulp) {
-  var open = require('gulp-open');
+var gulp = require('gulp');
+var gopen = require('gulp-open');
+var config = require('../config');
 
-  gulp.task('open', function() {
-    gulp.src(gulp.config.target + '/index.html').pipe(open('', {
-      url: 'http://localhost:' + gulp.config.port,
-      app: 'Google Chrome'
-    }));
-  });
-};
+gulp.task('open', function() {
+  gulp.src(config.target + '/index.html').pipe(gopen('', {
+    url: 'http://localhost:' + config.port,
+    app: 'Google Chrome'
+  }));
+});

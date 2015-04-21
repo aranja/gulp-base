@@ -1,12 +1,13 @@
-module.exports = function(gulp, gutil) {
-  var jade = require('gulp-jade');
-  var prod = gutil.env.prod;
+var gulp = require('gulp');
+var jade = require('gulp-jade');
+var config = require('../config');
+var errorHandler = require('../utils/error-handler');
 
-  gulp.task('jade', function() {
-    return gulp.srcWithErrorHandling(gulp.config.source + '/views/*.jade')
-      .pipe(jade({
-        pretty: !prod
-      }))
-      .pipe(gulp.dest(gulp.config.target));
-  });
-};
+gulp.task('jade', function() {
+  return gulp.src(config.source + '/views/*.jade')
+    .pipe(jade({
+      pretty: config.debug
+    }))
+    .on('error', errorHandler)
+    .pipe(gulp.dest(config.target));
+});

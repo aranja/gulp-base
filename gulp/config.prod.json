@@ -1,5 +1,0 @@
-{
-  "port": 8000,
-  "source": "app",
-  "target": "dist"
-}
