@@ -18,7 +18,7 @@ var config = {
 };
 
 // Extend with environment specific config
-var env = gutil.env.env || gutil.env.prod ? 'prod' : 'dev';
+var env = gutil.env.env || (gutil.env.prod ? 'prod' : 'dev');
 assign(config, config.env[env]);
 
 module.exports = config;
