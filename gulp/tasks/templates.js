@@ -4,7 +4,7 @@ var config = require('../config');
 var errorHandler = require('../utils/error-handler');
 
 gulp.task('templates', function() {
-  return gulp.src(config.source + '/views/*.jade')
+  return gulp.src(config.source + '/templates/*.jade')
     .pipe(jade({
       pretty: config.debug
     }))

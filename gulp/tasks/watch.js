@@ -10,24 +10,24 @@ gulp.task('watch', ['build'], function() {
     gulp.start('styles');
   });
 
-  watch(config.source + '/js/**/*.js', function() {
+  watch(config.source + '/scripts/**/*.js', function() {
     gulp.start('scripts');
   });
 
   watch([
     config.source + '/*.html',
-    config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}',
+    config.source + '/images/**/*.{png,gif,jpg,jpeg,svg}',
     config.source + '/fonts/**/*',
     config.source + '/videos/**/*'
   ], function() {
     gulp.start('copy');
   });
 
-  watch(config.source + '/views/**/*.jade', function() {
+  watch(config.source + '/templates/**/*.jade', function() {
     gulp.start('templates');
   });
 
-  watch(config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}', function() {
+  watch(config.source + '/images/**/*.{png,gif,jpg,jpeg,svg}', function() {
     gulp.start('images');
   });
 });
