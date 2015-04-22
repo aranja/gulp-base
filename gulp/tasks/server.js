@@ -12,7 +12,7 @@ gulp.task('server-browsersync', ['watch'], function() {
   gulp.watch(config.target + '/**/*').on('change', browserSync.reload);
 });
 
-gulp.task('server', ['server-browsersync'] function() {
+gulp.task('server', ['server-browsersync'], function() {
   gulp.src(config.target + '/index.html').pipe(gopen('', {
     url: 'http://localhost:' + config.port,
     app: 'Google Chrome'
