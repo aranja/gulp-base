@@ -4,7 +4,7 @@ var jscs = require('gulp-jscs');
 var config = require('../config');
 
 var files = [
-  config.source + '/js/**/*.js',
+  config.source + '/scripts/**/*.js',
   './gulp/tasks/*.js'
 ];
 

@@ -6,9 +6,9 @@ var config = require('../config');
 var errorHandler = require('../utils/error-handler');
 
 gulp.task('images', function() {
-  return gulp.src(config.source + '/img/**/*.{png,gif,jpg,jpeg,svg}')
-    .pipe(!config.minify ? changed(config.target + '/img/') : gutil.noop())
+  return gulp.src(config.source + '/images/**/*.{png,gif,jpg,jpeg,svg}')
+    .pipe(!config.minify ? changed(config.target + '/images/') : gutil.noop())
     .pipe(config.minify ? imagemin() : gutil.noop())
     .on('error', errorHandler)
-    .pipe(gulp.dest(config.target + '/img/'));
+    .pipe(gulp.dest(config.target + '/images/'));
 });

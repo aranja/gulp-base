@@ -7,9 +7,9 @@ var buffer = require('vinyl-buffer');
 var config = require('../config');
 var errorHandler = require('../utils/error-handler');
 
-gulp.task('browserify', ['lint'], function() {
+gulp.task('scripts', ['lint'], function() {
   return browserify({
-      entries: ['./' + config.source + '/js/app.js'],
+      entries: ['./' + config.source + '/scripts/app.js'],
       debug: config.debug
     })
     .bundle()
@@ -17,5 +17,5 @@ gulp.task('browserify', ['lint'], function() {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(config.minify ? uglify({preserveComments: 'some'}) : gutil.noop())
-    .pipe(gulp.dest(config.target + '/js/'));
+    .pipe(gulp.dest(config.target + '/scripts/'));
 });

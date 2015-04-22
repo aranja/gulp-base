@@ -5,7 +5,7 @@ gulp.task('copy', function() {
   gulp.src([
     config.source + '/*.html',
     config.source + '/app.yaml',
-    config.source + '/img/**/*.ico',
+    config.source + '/images/**/*.ico',
     config.source + '/fonts/**',
     config.source + '/videos/**'
   ], {base: config.source})
