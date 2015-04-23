@@ -5,7 +5,7 @@
 - Jade templating engine. 
 - Browserify for module loading JavaScript.
 - Image minification.
-- Gulp-server and livereload.
+- BrowserSync server.
 
 ## Usage
 
