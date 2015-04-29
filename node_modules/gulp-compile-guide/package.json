@@ -1,0 +1,28 @@
+{
+  "name": "gulp-compile-guide",
+  "version": "1.0.0",
+  "description": "Compiles multiple template files together.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aranja/gulp-compile-guide"
+  },
+  "author": "Aranja <aranja@aranja.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aranja/gulp-compile-guide/issues"
+  },
+  "homepage": "https://github.com/aranja/gulp-compile-guide",
+  "dependencies": {
+    "consolidate": "^0.12.1",
+    "gulp-util": "^3.0.4",
+    "highlight.js": "^8.5.0",
+    "jade": "^1.9.2",
+    "marked": "^0.3.3",
+    "string-humanize": "^1.0.0",
+    "through2": "^0.6.5"
+  }
+}
