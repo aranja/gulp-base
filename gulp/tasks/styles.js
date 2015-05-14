@@ -11,6 +11,7 @@ gulp.task('styles', function() {
     .pipe(less({
       paths: [
         config.source + '/styles',
+        config.source + '/components',
         'node_modules'
       ],
       rootpath: '../../',

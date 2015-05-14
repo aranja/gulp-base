@@ -6,7 +6,10 @@ var config = require('../config');
 gulp.task('watch', ['build'], function() {
   livereload.listen();
 
-  watch(config.source + '/styles/**/*.less', function() {
+  watch([
+    config.source + '/styles/**/*.less',
+    config.source + '/components/**/*.less'
+  ], function() {
     gulp.start('styles');
   });
 
