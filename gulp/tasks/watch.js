@@ -1,11 +1,8 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
 var config = require('../config');
 
 gulp.task('watch', ['build'], function() {
-  livereload.listen();
-
   watch([
     config.source + '/styles/**/*.less',
     config.source + '/components/**/*.less'
