@@ -2,7 +2,6 @@ var gutil = require('gulp-util');
 var assign = require('lodash.assign');
 
 var config = {
-  port: 3700,
   source: 'app',
   target: 'dev',
   minify: false,
