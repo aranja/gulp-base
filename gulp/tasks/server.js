@@ -4,9 +4,9 @@ var config = require('../config');
 
 gulp.task('server', ['watch'], function() {
   browserSync.init({
+    files: config.target + '/**/*',
     server: {
       baseDir: config.target
     }
   });
-  gulp.watch(config.target + '/**/*').on('change', browserSync.reload);
 });
