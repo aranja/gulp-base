@@ -14,6 +14,11 @@
   "bugs": {
     "url": "https://github.com/aranja/gulp-base/issues"
   },
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp",
+    "server": "npm run gulp -- server",
+    "start": "npm run server"
+  },
   "homepage": "https://github.com/aranja/gulp-base",
   "license": "MIT",
   "devDependencies": {
