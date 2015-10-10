@@ -1,43 +1,33 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var exec = require('child_process').exec;
-var fs = require('fs');
-var runSequence = require('run-sequence');
-var config = require('../config');
+import gulp from 'gulp';
+import gutil from 'gulp-util';
+import {readFileSync} from 'fs';
+import runSequence from 'run-sequence';
+import {exec} from 'child_process';
+import config from '../config';
 
-var version = gutil.env.version;
+const {version} = gutil.env;
 
-function getAppName() {
-  var appYaml = fs.readFileSync(config.target + '/app.yaml', {encoding: 'utf8'});
-  var appMatch = appYaml.match(/^application:\s*(.+)$/im);
+const appName = (() => {
+  const appMatch = readFileSync(`${config.target}/app.yaml`, {encoding: 'utf8'}).match(/^application:\s*(.+)$/im);
+
   if (!appMatch || !appMatch[1]) {
     throw new Error('Could not find application name in app.yaml');
   }
+
   return appMatch[1];
-}
+})();
 
-gulp.task('deploy-appengine', function(cb) {
-  var cmd = 'appcfg.py update --oauth2 ' + config.target;
-  if (version) {
-    cmd += ' --version ' + version;
-  }
+gulp.task('deploy-appengine', cb => {
+  const cmd = `appcfg.py update --oauth2 ${config.target} ${version ? ('--version ' + version) : ''}`;
+  const child = exec(cmd, cb);
 
-  var child = exec(cmd, cb);
   child.stdout.pipe(process.stdout);
   child.stderr.pipe(process.stderr);
 });
 
 gulp.task('deploy-log', function() {
-  var appName = getAppName();
-  var appUrl = '';
-  if (version) {
-    appUrl = 'https://' + version + '-dot-' + appName + '.appspot.com/';
-  } else {
-    appUrl = 'https://' + appName + '.appspot.com/';
-  }
+  const appUrl = `https://${version ? version + '-dot-' : ''}${appName}.appspot.com/`;
   console.log('Deployed to', appUrl);
 });
 
-gulp.task('deploy', ['build'], function(cb) {
-  runSequence('deploy-appengine', 'deploy-log', cb);
-});
+gulp.task('deploy', ['build'], cb => runSequence('deploy-appengine', 'deploy-log', cb));

@@ -1,7 +1,7 @@
-var notify = require('gulp-notify');
-var gutil = require('gulp-util');
+import notify from 'gulp-notify';
+import gutil from 'gulp-util';
 
-module.exports = function(err) {
+export default function(err) {
   notify.onError(err).apply(this, arguments);
   gutil.log(gutil.colors.red(err.toString()));
   this.emit('end');

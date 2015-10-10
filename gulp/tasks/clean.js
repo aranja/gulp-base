@@ -1,8 +1,5 @@
-var gulp = require('gulp');
-var config = require('../config');
+import gulp from 'gulp';
+import config from '../config';
+import rimraf from 'rimraf';
 
-var rimraf = require('rimraf');
-
-gulp.task('clean', function(cb) {
-  rimraf(config.target, cb);
-});
+gulp.task('clean', cb => rimraf(config.target, cb));

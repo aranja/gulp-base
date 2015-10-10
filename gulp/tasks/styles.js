@@ -1,13 +1,13 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var less = require('gulp-less');
-var autoprefixer = require('gulp-autoprefixer');
-var minifyCSS = require('gulp-minify-css');
-var config = require('../config');
-var plumber = require('gulp-plumber');
-var errorHandler = require('../utils/error-handler');
+import gulp from 'gulp';
+import gutil from 'gulp-util';
+import less from 'gulp-less';
+import autoprefixer from 'gulp-autoprefixer';
+import minifyCSS from 'gulp-minify-css';
+import config from '../config';
+import plumber from 'gulp-plumber';
+import errorHandler from '../utils/error-handler';
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
   return gulp.src(config.source + '/styles/**/*.less')
     .pipe(plumber({errorHandler: errorHandler}))
     .pipe(less({

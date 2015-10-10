@@ -1,10 +1,10 @@
-var gulp = require('gulp');
-var jade = require('gulp-jade');
-var config = require('../config');
-var errorHandler = require('../utils/error-handler');
+import gulp from 'gulp';
+import jade from 'gulp-jade';
+import config from '../config';
+import errorHandler from '../utils/error-handler';
 
-gulp.task('templates', function() {
-  return gulp.src(config.source + '/templates/*.jade')
+gulp.task('templates', () => {
+  return gulp.src(`${config.source}/templates/*.jade`)
     .pipe(jade({
       pretty: config.debug
     }))
