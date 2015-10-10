@@ -5,6 +5,7 @@ import config from '../config';
 gulp.task('server', ['watch'], function() {
   browserSync.create().init({
     files: `${config.target}/**/*`,
+    notify: false,
     server: {
       baseDir: config.target
     }
