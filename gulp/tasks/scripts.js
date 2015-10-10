@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import browserify from 'browserify';
+import babelify from 'babelify';
 import minify from 'gulp-uglify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
@@ -12,6 +13,7 @@ gulp.task('scripts', ['lint'], () => {
       entries: [`./${config.source}/scripts/app.js`],
       debug: config.debug
     })
+    .transform(babelify)
     .bundle()
     .on('error', errorHandler)
     .pipe(source('app.js'))
