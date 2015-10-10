@@ -1,6 +1,6 @@
 {
   "name": "gulp-base",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A base for projects using Gulp",
   "repository": {
     "type": "git",
