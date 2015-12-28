@@ -1,10 +1,11 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var config = require('../config');
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import config from '../config';
 
 gulp.task('server', ['watch'], function() {
-  browserSync.init({
-    files: config.target + '/**/*',
+  browserSync.create().init({
+    files: `${config.target}/**/*`,
+    notify: false,
     server: {
       baseDir: config.target
     }

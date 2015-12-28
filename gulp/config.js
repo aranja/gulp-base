@@ -1,7 +1,7 @@
-var gutil = require('gulp-util');
-var assign = require('lodash.assign');
+import gutil from 'gulp-util';
+import assign from 'lodash.assign';
 
-var config = {
+const config = {
   source: 'app',
   target: 'dev',
   minify: false,
@@ -17,7 +17,5 @@ var config = {
 };
 
 // Extend with environment specific config
-var env = gutil.env.env || (gutil.env.prod ? 'prod' : 'dev');
-assign(config, config.env[env]);
-
-module.exports = config;
+assign(config, config.env[gutil.env.env || (gutil.env.prod ? 'prod' : 'dev')]);
+export default config;

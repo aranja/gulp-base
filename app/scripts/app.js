@@ -1,1 +1,3 @@
-// Code me please!
+import $ from 'jquery';
+
+$(() => {});
